@@ -30,3 +30,13 @@
 ==> swap string elements between head and tail
 (11) cc1_3 (both _me and _other):
 ==> during the for loop check of string, change the string content simutaneously
+
+#0616
+./cc
+(12) cc1_4: check isAnagram
+method1: use a hashtable to count char occurances
+method2: sort and directly compare string
+(13) cc1_5: replace a char in string with a substr
+(14) cc1_6: rotate an image by 90 degrees (use a little math)
+(15) cc1_7: use two sets to record row/col indices where 0 occurs
+(16) cc1_8: a smart way to check rotated string
