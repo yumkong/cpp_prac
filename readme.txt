@@ -40,3 +40,12 @@ method2: sort and directly compare string
 (14) cc1_6: rotate an image by 90 degrees (use a little math)
 (15) cc1_7: use two sets to record row/col indices where 0 occurs
 (16) cc1_8: a smart way to check rotated string
+
+#0617
+./cc
+(17) linklist.cpp:  a warm up file for linklist: create/destroy a linklist, insert/delete a node from a linklist
+(18) cc2_1: delete duplicated data from linklist using set
+(19) cc2_2: find nth last element from a linklist
+(20) cc2_3: rewrite linklist myself. Remove a certain node from linklist, given only access to that node.
+(21) cc2_4: add two linklists like the sum of 2 integers
+(22) cc2_5: detect loop of a link list with map container
