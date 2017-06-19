@@ -49,3 +49,13 @@ method2: sort and directly compare string
 (20) cc2_3: rewrite linklist myself. Remove a certain node from linklist, given only access to that node.
 (21) cc2_4: add two linklists like the sum of 2 integers
 (22) cc2_5: detect loop of a link list with map container
+
+#0618
+./cc
+(23) cc3_1: use an array to hold 3 stacks
+(24) cc3_2: let stack output min() func in O(1) time
+(25) cc3_3: set of stacks
+(26) hanoi: solve classic hanoi tower with recursion
+(26_2) cc3_4: hanoi tower with iteration (using stack)
+(27) cc3_5: implements a queue with 2 stacks
+(28) cc3_6: sort a stack (inplace or save to another stack)
