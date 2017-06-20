@@ -59,3 +59,26 @@ method2: sort and directly compare string
 (26_2) cc3_4: hanoi tower with iteration (using stack)
 (27) cc3_5: implements a queue with 2 stacks
 (28) cc3_6: sort a stack (inplace or save to another stack)
+
+
+#0619
+./cc
+(29) cc4_1: check if a tree is balanced
+(30) cc4_2: check whether there is a path between 2 nodes in a directed graph
+(31) cc4_3: create a binary tree with minimal height given sorted array
+(32) cc4_4: create a linklist for each tree level
+(33) cc4_5: find the successor of a given node in a binary search tree
+(34) cc4_6: find the frist ancestor of two nodes in a tree
+(35) cc4_7: check if a tree is another tree's subtree
+(36) cc4_8: find all tree paths where the sum of the node on the path equals to a certain number
+./cpp_primer
+(37) cpp16_1: template function to get absolute of a value
+(38) cpp16_2: template function to print out to different streams (file, screen(cout), and memory(stringstream))
+(39) cpp16_5: template function to get the max of two vals
+(40) cpp16_9: template function using different vectors' iterator as arguments
+(41) cpp16_12: get the maximal occurence element of a container
+(42) cpp16_13: print container's elements
+(43) cpp16_14: same as (42)
+(44) cpp16_15: template func with non-type template parameter: return an array's length
+(45) cpp16_16: template func with non-type template parameter: print a container's elements
+
