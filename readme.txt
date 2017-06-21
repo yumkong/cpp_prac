@@ -82,3 +82,23 @@ method2: sort and directly compare string
 (44) cpp16_15: template func with non-type template parameter: return an array's length
 (45) cpp16_16: template func with non-type template parameter: print a container's elements
 
+#0620
+./cc
+(46) cc5_1: use a binary segment to replace a sub-segment of an int
+(47) cc5_2: represent a decimal in binary
+(48) cc5_3: given an integer, print the next smallest and next largest nmber that have the same number of "1" bits
+(49) cc5_5: count how many bits need to be flipped to convert (int a) to (int b)
+(50) cc5_6: swap odd and even bits in a integer with as few instructions as possible.
+(51) cc5_7: check which number is missing from a set of n numbers (0,1,2,...,n). Each integer is only accessible in one bit at a time.
+(52) recursion: Fibonacci series
+./cpp_primer
+(53) cpp16_25: data type casting and explicit template argument when using function template
+(54) cpp16_27.cpp, cpp16_27_median.cpp and cpp16_27_median.hpp: how to divide function implementation and declarition
+(55) cpp16_32: self-defined Queue class template
+(56) cpp16_34: self-defined List class template (find a bug of the solution book)
+
+
+
+
+
+
