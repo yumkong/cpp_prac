@@ -91,6 +91,7 @@ method2: sort and directly compare string
 (50) cc5_6: swap odd and even bits in a integer with as few instructions as possible.
 (51) cc5_7: check which number is missing from a set of n numbers (0,1,2,...,n). Each integer is only accessible in one bit at a time.
 (52) recursion: Fibonacci series
+
 ./cpp_primer
 (53) cpp16_25: data type casting and explicit template argument when using function template
 (54) cpp16_27.cpp, cpp16_27_median.cpp and cpp16_27_median.hpp: how to divide function implementation and declarition
@@ -98,7 +99,20 @@ method2: sort and directly compare string
 (56) cpp16_34: self-defined List class template (find a bug of the solution book)
 
 
+#0621
+./cpp_primer
+(57) cpp16_52: count the number of occurences of an elment in a vector
+(58) cpp12_13: extend the Screen class to include move(), set(), and display()
 
+./cc
+(59) cc8_2: count how many paths that a robot can go through a maze
+     cc8_2_add:  what if there is "limit off" (obstacles)
+(60) cc8_3: get all subsets of a set
+(61) cc8_4: get all permutations of a string
+(62) cc8_5: print all valid combinations of n-pairs of parentheses
+(63) cc8_6: paint fill
+(64) cc8_7: number of combinations of 25, 10,10, 5cents to get an arbitray n cents
+(65) cc8_8: classis eight queen
 
 
 
