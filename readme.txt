@@ -115,4 +115,14 @@ method2: sort and directly compare string
 (65) cc8_8: classis eight queen
 
 
-
+#0622
+./cc
+(66) cc9_1: merge two sorted arrays
+(67) cc9_2: sort an array of strings so that all anagrams are next to each other
+(68) cc9_3: search a number in O(logn) on a sorted array after one time's back-forth rotation
+(69) cc9_5: given a sorted array of strings which is interspersed with empty strings, find the location of a given string
+(70) cc9_6: given a matrix in which each row and each column is sorted, find an element in it => do it in O(row + col)
+(71) cc9_7: given height and weight of each person, compute the largest number of people in a tower (where the higher the tower, both the shorter and lighter the person is)
+(72) cc10_4: implement -,*,/ with only +
+(73) cc10_6: given a 2d graph with points on it, find a line that passes most number of points
+(74) cc10_7: find the i-th integer whose only prime factors are 3,5,7
