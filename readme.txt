@@ -129,6 +129,7 @@ method2: sort and directly compare string
 
 
 #0623
+./cc
 (75) cc12_3.cpp: given an input file with 4G (4 billion) integers, generate an integer which is not contained in the file (assume 1GB memory)
      cc12_3_add.cpp: same problem, but assume only 10M memory (the integers have no duplicates)
      cc12_3_add2.cpp: same problem, assume only 10M memory (the integers have duplicates)
@@ -144,3 +145,19 @@ method2: sort and directly compare string
 (85) cc19_4: find the maximum of 2 numbers, not use if-else or comparison operator
 (86) cc19_6: translate number to string
 
+#0624
+./cc
+(87) cc19_5: estimate hits and pseudo-hits of two strings
+(88) cc19_7: given an array of integers, find the continuous sequence with the largest sum
+(89) cc19_10: implement rand7() using rand5()
+(90) cc19_11: finding all pairs of integers within an array summing to a specified value
+(91) cc20_1: add two numbers, not use + or any arithmetic operators
+(92) cc20_2: make a perfect shuffle of a deck of cards
+(93) cc20_3: randomly generate a set of m integers from an array of size n, each element must have equal probability of being chosen
+(94) cc20_4: count the number of 2's between 0 and n
+(95) cc20_5: given any two words in a large text file containing words, find the shortest distance between them in terms of the number of words 
+(96) cc20_7: find the longest word made of other words in a list of words
+(97) cc20_8: given a string S and an array of smaller strings T, search S for each string in T
+(98) cc20_9: given randomly generated numbers, find and maintain the median value as new values are generated
+(99) given a square matrix, where each cell is filled with either black or white, find the maxmum subsquare s.t. all four borders are filled with black pixels
+(100) given an N x N matrix of positive and negative integers, find the sub-matrix with the largest possible sum
