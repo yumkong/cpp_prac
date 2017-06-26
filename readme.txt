@@ -126,3 +126,21 @@ method2: sort and directly compare string
 (72) cc10_4: implement -,*,/ with only +
 (73) cc10_6: given a 2d graph with points on it, find a line that passes most number of points
 (74) cc10_7: find the i-th integer whose only prime factors are 3,5,7
+
+
+#0623
+(75) cc12_3.cpp: given an input file with 4G (4 billion) integers, generate an integer which is not contained in the file (assume 1GB memory)
+     cc12_3_add.cpp: same problem, but assume only 10M memory (the integers have no duplicates)
+     cc12_3_add2.cpp: same problem, assume only 10M memory (the integers have duplicates)
+(76) cc12_4.cpp: given an array with all numbers from 1 to N, where N at most 32,000 (2^15), the array may have duplicate entries and N is unknown. How to print all duplicate elements in the array?
+(77) cc13_1.cpp: print the last K lines of an input file
+(78) cc13_6.cpp: a toy program to show C++'s hiding name phenonmenon
+(79) cc13_9.cpp: smart pointer
+(80) cc16_5.cpp: find whether big endian or little endian of your machine
+(81) cc16_10.cpp: write a function my2DAlloc which allocates a 2d array. It should minimize the number of calls to malloc and make sure the memory is accessible by arr[i][j]
+(82) cc19_1: swap 2 numbers in place without temporary variables
+(83) cc19_2: figure out if someone has won tic-tac-toe
+(84) cc19_3: compute number of trailing zeros in n fractorial
+(85) cc19_4: find the maximum of 2 numbers, not use if-else or comparison operator
+(86) cc19_6: translate number to string
+
