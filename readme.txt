@@ -162,3 +162,26 @@ method2: sort and directly compare string
 (99) given a square matrix, where each cell is filled with either black or white, find the maxmum subsquare s.t. all four borders are filled with black pixels
 (100) given an N x N matrix of positive and negative integers, find the sub-matrix with the largest possible sum
 
+#0625
+./leet
+(101) leet_1: find two elems from a vector, their sum is a certain value
+(102) leet_2: adding two numbers using linkNode
+(103) leet_3: find length of longest string with no duplication
+(104) leet_4: find median of two sorted arrays
+
+#0626
+./leet
+(105) leet_6: zigzag conversion of a string
+(106) leet_7: reverse of an integer, whether it be positive or negative. When the reversed integer larger max_int, return 0
+(107) leet_532: find all pairs in an array whose abs diff is a certain value.
+=> still has bugs nows
+(108) leet_560: find total number of subarrays that sums to K
+
+#0627
+./cpp_primer
+(109) cpp12_34: class member var read and print
+(110) cpp12_27: bank account class
+(111) cpp12_38: static member var
+(112) cpp13_10: class's assignment func and constructor func
+(113) cpp13_14: example of what type of constructor and destructor are called
+(114) cpp13_24: intelligent pointer
