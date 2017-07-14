@@ -161,3 +161,19 @@ method2: sort and directly compare string
 (98) cc20_9: given randomly generated numbers, find and maintain the median value as new values are generated
 (99) given a square matrix, where each cell is filled with either black or white, find the maxmum subsquare s.t. all four borders are filled with black pixels
 (100) given an N x N matrix of positive and negative integers, find the sub-matrix with the largest possible sum
+
+#0625
+./leet
+(101) leet_1: find two elems from a vector, their sum is a certain value
+(102) leet_2: adding two numbers using linkNode
+(103) leet_3: find length of longest string with no duplication
+(104) leet_4: find median of two sorted arrays
+
+#0626
+./leet
+(105) leet_6: zigzag conversion of a string
+(106) leet_7: reverse of an integer, whether it be positive or negative. When the reversed integer larger max_int, return 0
+(107) leet_532: find all pairs in an array whose abs diff is a certain value.
+=> still has bugs nows
+(108) find total number of subarrays that sums to K
+
