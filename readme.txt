@@ -167,21 +167,33 @@ method2: sort and directly compare string
 (101) leet_1: find two elems from a vector, their sum is a certain value
 (102) leet_2: adding two numbers using linkNode
 (103) leet_3: find length of longest string with no duplication
-(104) leet_4: find median of two sorted arrays
 
 #0626
 ./leet
-(105) leet_6: zigzag conversion of a string
-(106) leet_7: reverse of an integer, whether it be positive or negative. When the reversed integer larger max_int, return 0
-(107) leet_532: find all pairs in an array whose abs diff is a certain value.
-=> still has bugs nows
-(108) leet_560: find total number of subarrays that sums to K
+(104) leet_6: zigzag conversion of a string
+(105) leet_7: reverse of an integer, whether it be positive or negative. When the reversed integer larger max_int, return 0
+(106) leet_532: find all pairs in an array whose abs diff is a certain value.
+=> still has bugs nows => 0628 bug fixed
+(107) leet_560: find total number of subarrays that sums to K
 
 #0627
 ./cpp_primer
-(109) cpp12_34: class member var read and print
-(110) cpp12_27: bank account class
-(111) cpp12_38: static member var
-(112) cpp13_10: class's assignment func and constructor func
-(113) cpp13_14: example of what type of constructor and destructor are called
-(114) cpp13_24: intelligent pointer
+(108) cpp12_34: class member var read and print
+(109) cpp12_27: bank account class
+(110) cpp12_38: static member var
+(111) cpp13_10: class's assignment func and constructor func
+(112) cpp13_14: example of what type of constructor and destructor are called
+(113) cpp13_24: intelligent pointer
+
+#0628
+./leet
+(114) leet_4: find median of two sorted arrays => change to find kth element of two sorted arrays
+(115) leet_5: find longest palindrome of a string
+(116) leet_561: find the maximax sum of the least int in each pair of ints in an even array
+(117) leet_565: find the longest nested array
+(118) leet_566: reshape a 2-d matrix
+(119) leet_581: find maximum unsorted subarray
+(120) leet_605: maximax possible positions where flowers can be put
+(121) leet_611: find the number of integer combinations that can form a trangle in O(n^2) time
+(122) leet_621: what is minimal job task intervals?
+(123) leet_628: maximum products of three integers in an array
