@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring> // memset
+#include <cmath>
 using namespace std;
 
 int main()
@@ -17,6 +18,8 @@ int main()
         cout << arr[i] << endl;
     }
     cout << "bool is " << sizeof(bool) << " bytes" << endl;
+    cout << "sqrt(100)" << sqrt(100) << endl;
+    cout << "sqrt(101)" << sqrt(101) << endl;
     delete [] arr;
     return 0;
 }

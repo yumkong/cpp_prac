@@ -1,7 +1,8 @@
+// reverse an integer: e.g., -123 => -321
 #include <iostream>
-#include <cstdlib> // itoa, atoi
-#include <string>
-#include <algorithm> // reverse
+//#include <cstdlib> // itoa, atoi
+//#include <string>
+//#include <algorithm> // reverse
 using namespace std;
 //The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows
 class Solution {
