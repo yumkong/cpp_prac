@@ -18,4 +18,6 @@ def main():
     print int32(~(1 << 31))
 
 if __name__ == '__main__':
+    max_int = 2147483647
+    min_int = -2147483648
     main()
