@@ -1,1 +1,0 @@
-g++ leet_1.cpp -o leet_1 -std=c++11

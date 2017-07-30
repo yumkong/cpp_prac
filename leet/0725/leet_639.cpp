@@ -10,8 +10,10 @@ public:
     int numDecodings(string s) {
         int len = s.size();
         long res[2];
+        // intepretation ways of the 1st element
         res[0] = helper(s.at(0));
         if(len == 1) return res[0];
+        // interpretation ways of the 1st and 2nd elements
         res[1] = res[0] * helper(s.at(1)) + helper(s.at(0), s.at(1));
         for(int j = 2; j < len; ++j)
         {

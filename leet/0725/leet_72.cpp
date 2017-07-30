@@ -4,7 +4,7 @@
 // (2) delete a char
 // (3) replace a char
 // dp problem: define state dp[i][j] the minimum number of operations to convert word1[0...i-1] to word2[0 ...j-1]
-// a): corner case: to convert a string to an empty string (j == 1) requires at least i operation:
+// a): corner case: to convert a string to an empty string requires at least i operation:
 // -- dp[i][0] = i,
 // -- dp[0][j] = j,
 // b): general case: convert an non-empty str to another non-empty str. 
@@ -33,8 +33,9 @@ public:
         {
             for(int j = 1; j <= len2; ++j)
             {
+                // if control the iteration ==> more complex than normal iteration
                 if(word1[i - 1] == word2[j - 1]) dp[i][j] = dp[i-1][j-1];
-                else dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j])) + 1;// to min operation
+                else dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j])) + 1;// two mins => compare 3 elements
             }
         }
         return dp[len1][len2];

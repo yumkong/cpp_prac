@@ -1,0 +1,42 @@
+// given a string, determine if is a palindrome, consider only alphanumeric chars and ignoring cases
+#include <string>
+#include <iostream>
+using namespace std;
+
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int len = s.size();
+        if(len <= 1) return true;
+        int start = 0, end = len - 1;
+        while(start < end)
+        {
+            int flag = 0;
+            char left = s.at(start);
+            char right = s.at(end);
+            if((left >= 'a' && left <= 'z') || (left >= 'A' && left <= 'Z')) ++flag;
+            else ++start;
+            if((right >= 'a' && right <= 'z') || (right >= 'A' && right <= 'Z')) ++flag;
+            else --end;
+            if(flag == 2)
+            {
+                if(left == right || left - right == (char)32 || right - left == (char)32)
+                {   //debug
+                    cout << "match: start = " << start << ", end = " << end << endl;
+                    ++start;
+                    --end;
+                }
+                else return false;
+            }
+        }
+        return true;
+    }
+};
+
+int main()
+{
+    Solution solu;
+    //cout << solu.isPalindrome("A man, a plan, a canal: Panama") << endl;
+    cout << solu.isPalindrome("0P") << endl;
+    return 0;
+}

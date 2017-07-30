@@ -30,6 +30,7 @@ public:
             // stop at min(k, cur_max): no need to do more
             for(int j = 1; j <= min(k, cur_max); ++j)
             {
+                // dp[i][j-1] = dp[i-1][j-1] + dp[i-1][j-2] + ... + dp[j-i+1]
                 dp[i][j] = dp[i][j-1] + dp[i-1][j];
                 if(j >= i) dp[i][j] -= dp[i-1][j-i];
                 // sometimes may be negative so (x + bigprime) % bigprime
