@@ -22,6 +22,8 @@ public:
             sell1 = max(sell1, buy1 + prices[i]);
             buy2 = max(buy2, sell1 - prices[i]);
             sell2 = max(sell2, buy2 + prices[i]);
+            // observe
+            cout << buy1 << ", " << sell1 << ", " << buy2 << ", " << sell2 << endl;
         }
         return sell2;
     }

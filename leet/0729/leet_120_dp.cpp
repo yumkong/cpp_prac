@@ -11,9 +11,9 @@ public:
         int len = triangle.size();
         for(int i = len - 2; i >= 0; --i)
         {
-            int len1 = triangle[i].size();
+            int len1 = triangle[i].size(); // len1 always == i, due to structure
             for(int j = 0; j < len1; ++j)
-            {
+            {   // assign jth elem not affecting assigning j+1, ...
                 tmpvec[j] = min(tmpvec[j], tmpvec[j+1]) + triangle[i][j];
             }
         }
