@@ -1,0 +1,48 @@
+// divide two integers without x, / and % 
+// if overflow, return MAX_INT
+#include <iostream>
+//#include <climits> // INT_MAX
+using namespace std;
+
+class Solution {
+public:
+    int divide(int dividend, int divisor) {
+        int max_int = ~(1 << 31);
+        int min_int = (1 << 31);
+        if(divisor == 0) return max_int; // overflow
+        if(dividend == min_int && divisor == -1) return max_int; // overflow
+        if(dividend == 0) return 0;
+        int sign = 1;
+        if(dividend < 0) 
+        {
+            sign = -1;
+            dividend = -dividend;
+        }
+        if(divisor < 0) 
+        {
+            sign = sign * (-1);
+            divisor = -divisor;
+        }
+        if(dividend < divisor) return 0;
+        if(divisor == 1) return sign * dividend; 
+        int res = 0;
+        while(dividend >= divisor)
+        {
+            dividend -= divisor;
+            ++res;
+        }
+        return sign * res;
+    }
+};
+
+int main()
+{
+    int a = 11;
+    int b = 0;
+    int c = -2;
+    Solution solu;
+    //cout << solu.divide(a, b) << ", answer = " << a/b << endl;
+    cout << solu.divide(a, c) << ", answer = " << a/c << endl;
+    cout << solu.divide(c, a) << ", answer = " << c / a << endl;;
+    return 0;
+}
