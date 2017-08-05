@@ -1,5 +1,6 @@
 // given a binary tree each node represent the money, but cannot get the money from directly linked node (aka. father-left or father-right), find the way to get the maximum amount of money
-#include <queue>
+// NOTE: for tree always remember to recursion left tree and right tree
+#include <map>
 #include <iostream>
 using namespace std;
 //Definition for a binary tree node.
@@ -13,35 +14,21 @@ struct TreeNode {
 class Solution {
 public:
     int rob(TreeNode* root) {
+        map<TreeNode *, int> mp; //
+        return helper(root, mp);
+    }
+    int helper(TreeNode *root, map<TreeNode *, int> &mp)
+    {
         if(!root) return 0;
-        queue<TreeNode *> qt;
-        qt.push(root);
-        int qtsiz = 1;
-        int cnt = 0;
-        vector<int> levelsum;
-        while(qtsiz > 0)
-        {
-            int sum = 0;
-            for(int i = 0; i < qtsiz; ++i)
-            {
-                TreeNode *tmp = qt.front();  qt.pop();
-                sum += tmp->val;
-                if(tmp->left) qt.push(tmp->left);
-                if(tmp->right) qt.push(tmp->right);
-            }
-            levelsum.push_back(sum);
-            qtsiz = qt.size(); // update qtsiz
-        }
-        // begin a dp
-        int len = levelsum.size();
-        vector<int> dp(len, 0);
-        dp[0] = levelsum[0];
-        dp[1] = max(levelsum[0], levelsum[1]);
-        for(int i = 2; i < len; ++i)
-        {
-            dp[i] = max(dp[i - 1], levelsum[i] + dp[i - 2]); 
-        }   
-        return dp[len - 1];
+        //cout << "come1: " << root->val << endl;
+        if(mp.count(root) > 0) return mp[root]; // save duplication computation
+        int val = 0;
+        //cout << "come2" << endl;
+        if(root->left) val += helper(root->left->left, mp) + helper(root->left->right, mp);
+        if(root->right) val += helper(root->right->left, mp) + helper(root->right->right, mp);
+        val = max(val + root->val, helper(root->left, mp) + helper(root->right, mp));
+        mp[root] = val; // build the hashmap
+        return val; // the max money
     }
 };
 
