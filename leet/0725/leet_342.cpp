@@ -1,69 +1,14 @@
 // check whether an integer (signed) is a power of 4
 // could do without loops/ recursion
+//method 1: explain: First,greater than 0.Second,only have one '1' bit in their binary notation,so we use x&(x-1) to delete the lowest '1',and if then it becomes 0,it prove that there is only one '1' bit.Third,the only '1' bit should be locate at the odd location,for example,16.It's binary is 00010000.So we can use '0x55555555' to check if the '1' bit is in the right place
 #include <iostream>
 using namespace std;
 
 class Solution {
 public:
     bool isPowerOfFour(int num) {
-        if(num < 0) return false;
-        if(num == 0 || num == 1) return true;
-        int max_int = ~(1<<31);
-        int left = 0, right = max_int;
-        int res;
-        bool flag = helper(left, right, res, num);
-        if(flag) return helper(left, res, res, res);
-        else return false;
-    }
-    bool helper(int left, int right, int &res, int num)
-    {
-        bool flag;
-        int mid;
-        //cout << "come $$$" << endl;
-        while(left < right)
-        {
-            //cout << "mid = " << mid << ", num = " << num << endl;
-            //cout << "left = " << left << ", right = " << right << endl;
-            mid = (left + right) / 2;
-            if(mid <= 1) {flag = false; break;}
-            if(mid > num / mid)
-            {
-                if((mid - 1) > num/ (mid - 1)) right = mid - 1;
-                else if((mid - 1) < num/ (mid - 1))
-                {
-                    flag = false;
-                    break;
-                }
-                else // NOTE this has error potential!!! mid * mid may not be num due to integer division
-                {
-                    res = mid - 1;
-                    flag = (res * res == num);
-                    break;
-                }
-            }
-            else if(mid < num / mid)
-            {
-                if((mid + 1) > num / (mid + 1))
-                { 
-                    flag = false;
-                    break;
-                }
-                else if((mid + 1) < num/ (mid + 1)) left = mid + 1;
-                else
-                {
-                    res = mid + 1;
-                    flag = (res * res == num);
-                    break;
-                }
-            }
-            else
-            {
-                res = mid;
-                flag = (res * res == num);
-                break;
-            }
-        }
-        return flag;
+        // method 1: an rule of binary representation of n^4 (see the above)
+        return num > 0 && (num & (num - 1)) == 0 && (num & 0x55555555) != 0;
     }
 };
 

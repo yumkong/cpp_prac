@@ -15,10 +15,10 @@ public:
         sort(t.begin(), t.end()); // ascending order
         for(int i = 0; i < len; ++i)
         {
-            if(s.at(i) != t.at(i)) return t.at(i);
+            if(s[i] != t[i]) return t[i];
         }
         // in case the new letter is at the end
-        return (char)t.at(len);
+        return t[len];
 
         //##### a better method
         //char r = 0;
