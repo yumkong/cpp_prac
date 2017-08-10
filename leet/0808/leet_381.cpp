@@ -25,7 +25,7 @@ public:
     // Removes a value from the collection. Returns true if the collection contained the specified element
     bool remove(int val) {
         if(dict[val].size() == 0) return false;
-        int idx = dict[val].back(); dict[val].pop_back(); // last index of val
+        int idx = dict[val].back(); 
         // swap arr[idx] and arr[arr.size()-1] if idx != arr.size()-1
         // modify the dict accordingly
         if(arr.size() - 1 != idx)
@@ -36,6 +36,7 @@ public:
             dict[tmp].pop_back(); // remove the index of "size()-1"
             dict[tmp].push_back(idx);
         }
+		dict[val].pop_back(); // last index of val
         // safely remove last elem from vector arr since it has been copied to idx position
         arr.pop_back();
         return true;
