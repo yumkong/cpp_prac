@@ -4,7 +4,7 @@
 #include <vector>
 #include <stack>
 using namespace std;
-
+//maintain a row length of Integer array H recorded its height of '1's, and scan and update row by row to find out the largest rectangle of each row.
 class Solution {
 public:
     int maximalRectangle(vector<vector<char> >& matrix) {
