@@ -13,7 +13,8 @@ public:
         int col = matrix[0].size();
         if(col == 0) return 0;
         // record how many 1's in each column
-        vector<int> hrecord(col + 1, 0);
+        // NOTE: here add a border term at col-th idx 
+        vector<int> hist(col + 1, 0);
         int res = 0;
         for(int r = 0; r < row; ++r)
         {
@@ -22,16 +23,20 @@ public:
             {
                 if(c < col)
                 {
-                    if(matrix[r][c] == '1') hrecord[c] += 1;
-                    else hrecord[c] = 0;
+                    // 
+                    if(matrix[r][c] == '1') hist[c] += 1;
+                    else hist[c] = 0;
                 }
-                if(st.empty() || hrecord[st.top()] <= hrecord[c]) st.push(c);
+                // stack keep the increasing hist bar's column index
+                if(st.empty() || hist[st.top()] <= hist[c]) st.push(c);
                 else
                 {
+                    // when decreasing, compute the area of the high bar's in the middle
+                    // until the bars recover's increasing (more precisely non-decreasing) order
                     while(!st.empty() && hrecord[c] < hrecord[st.top()])
                     {
                         int tmp = st.top(); st.pop();
-                        int area = hrecord[tmp] * (st.empty()? c : (c - st.top() - 1));
+                        int area = hist[tmp] * (st.empty()? c : (c - st.top() - 1));
                         if(area > res) res = area;
                     }
                     st.push(c);
