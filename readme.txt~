@@ -157,7 +157,7 @@ method2: sort and directly compare string
 (94) cc20_4: count the number of 2's between 0 and n
 (95) cc20_5: given any two words in a large text file containing words, find the shortest distance between them in terms of the number of words 
 (96) cc20_7: find the longest word made of other words in a list of words
-(97) cc20_8: [***trie***]given a string S and an array of smaller strings T, search S for each string in T
+(97) cc20_8: given a string S and an array of smaller strings T, search S for each string in T
 (98) cc20_9: given randomly generated numbers, find and maintain the median value as new values are generated
 (99) given a square matrix, where each cell is filled with either black or white, find the maxmum subsquare s.t. all four borders are filled with black pixels
 (100) given an N x N matrix of positive and negative integers, find the sub-matrix with the largest possible sum
