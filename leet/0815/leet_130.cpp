@@ -4,9 +4,6 @@
 #include <iostream>
 using namespace std;
 
-
-class Solution {
-public:
 class UnionFind {
 private:
     int count;
@@ -33,7 +30,7 @@ public:
                 }
                 else {parent[i * c + j] = -1; --count;} // X
                 rank[i * c + j] = 0;
-                cout << "parent[" << i * c + j << "] = " << parent[i * c + j] << endl;
+                //cout << "parent[" << i * c + j << "] = " << parent[i * c + j] << endl;
             }
         }
         count += 1; // all X's is counted as 1
@@ -49,10 +46,11 @@ public:
         while(parent[p] != -1 && parent[p] != 0 && p != parent[p])// (p != parent[p])
         {
             parent[p] = parent[parent[p]];
+            if(parent[p] == -1 || parent[p] == 0) return parent[p];
             //cout << "ok2, parent[" << p << "] = " << parent[p] << endl; 
-            p = parent[p];
+            else p = parent[p];
         }
-        cout << "ok2, parent[" << p << "] = " << parent[p] << endl; 
+        //cout << "ok2, parent[" << p << "] = " << parent[p] << endl; 
         //cout << "ok2" << endl;
         return parent[p]; //p;
     }
@@ -61,7 +59,7 @@ public:
     {
         int rootP = find(p);
         int rootQ = find(q);
-        cout << "ok3, p = " << p << ", rootP = " << rootP << ", rootQ = " << rootQ << endl;
+        //cout << "ok3, p = " << p << ", rootP = " << rootP << ", rootQ = " << rootQ << endl;
         if(rootP == rootQ) return;
         if(rootP == 0) parent[rootQ] = rootP;
         else if(rootQ == 0) parent[rootP] = rootQ;
@@ -82,27 +80,28 @@ public:
     {
         return count;
     }
-//    vector<vector<char>> getMatrix(vector<vector<char>> board, int row, int col)
-//    {
-//        for(int r = 1; r < row - 1; ++r)
-//        {
-//            for(int c = 1; c < col - 1; ++c)
-//            {   cout << "r = " << r << ", c = " << c << endl;
-//                if(board[r][c] == 'O' && find(r*col + c) != 0) board[r][c] = 'X';
-///            }
-//        }
-//        return board;
-//    }
+    void getMatrix(vector<vector<char>> &board, int row, int col)
+    {
+        for(int r = 1; r < row - 1; ++r)
+        {
+            for(int c = 1; c < col - 1; ++c)
+            {   //cout << "r = " << r << ", c = " << c << endl;
+                if(board[r][c] == 'O' && find(r*col + c) != 0) board[r][c] = 'X';
+            }
+        }
+    }
 };
 
+class Solution {
+public:
     void solve(vector<vector<char>>& board) {
         int row = board.size();
         if(row <= 0) return;
         int col = board[0].size();
         if(col <= 0) return;
-        cout << "come1, row = " << row << ", col = " << col << endl;
+        //cout << "come1, row = " << row << ", col = " << col << endl;
         UnionFind uf(row, col, board);
-        cout << "come2" << endl;
+        //cout << "come2" << endl;
         for(int r = 1; r < row; ++r)
         {
             for(int c = 1; c < col; ++c)
@@ -114,8 +113,8 @@ public:
                 }
             }
         }
-        cout << "come3" << endl;
-        //board = uf.getMatrix(board, row, col);
+        //cout << "come3" << endl;
+        uf.getMatrix(board, row, col);
     }
 };
 
@@ -137,10 +136,10 @@ int main()
                                  vector<char>({'X','X','O','X','X','X','X','O','O','O'}) });
     Solution solu;
     solu.solve(input);
-    cout << "come 4" << endl;
+    //cout << "come 4" << endl;
     for(auto& row: input) 
     { 
-        cout << "come5" << endl;
+        //cout << "come5" << endl;
         for(auto& c: row) cout << c << " ";
         cout << endl;
     }
