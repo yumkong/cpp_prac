@@ -1,0 +1,17 @@
+# given a text file file.txt containing list of phone numbers (one per line),  write a one liner bash
+# script to print all valid phone numbers.
+# assume a valid phone number must appear in : (xxx) xxx-xxxx or xxx-xxx-xxxx
+# assume each line in the text file must not contain leading or trailing white spaces.
+
+###  how to execute  ###
+#yuguang@eos:/usr/local/data/yuguang/selfprac/cpp_git/leet/0816$ chmod u+x leet_193_bash 
+#yuguang@eos:/usr/local/data/yuguang/selfprac/cpp_git/leet/0816$ ./leet_193_bash
+
+# solu 1 using grep
+grep -P '^(\d{3}-|\(\d{3}\) )\d{3}-\d{4}$' file.txt
+
+# solu 2 using sed
+#sed -n -r '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/p' file.txt
+
+# solu 3 using awk:
+#awk '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/' file.txt
