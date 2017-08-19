@@ -1,6 +1,9 @@
 // given an non-negative int array and an integer m, split the array into m non-empty continous subarrays
 // make sure to minimize the largest sum among these m subarrays
 // 1<= n <= 1000,  1 <= m <= 50
+// Solu: the answer is between max value of the input array and sum of these numbers
+// => use binary search to narrow down and left and right boundaries an approach the correct answer
+
 #include <vector>
 #include <iostream>
 #include <cmath>
@@ -9,29 +12,42 @@ using namespace std;
 class Solution {
 public:
     int splitArray(vector<int>& nums, int m) {
-        int len = nums.size();
-        if(len == 1) return nums[0];
-        // change nums to an integer array
-        vector<int> dp(len + 1, 0);
-        for(int i = 0; i < len; ++i) dp[i+1] = dp[i] + nums[i];
-        int avg = 0, maxsum = (1 << 31); // init as int_min
-        if(m == 1) return dp[len];
-        else avg = dp[len] / m;
-        int preidx = 0, cnt = 0;
-        for(int i = 1; i <= len; ++i)
+        int maxnum = 0;
+        long arrsum = 0;
+      
+        for(int i = 0; i < nums.size(); ++i)
         {
-            if(dp[i] - dp[preidx] >= avg)
+            maxnum = max(maxnum, nums[i]);
+            arrsum += nums[i];
+        }
+        // only 1 subarray
+        if(m == 1) return (int)arrsum;
+        // binary search
+        long l = maxnum, r = arrsum;
+        while(l <= r)
+        {
+            long mid = (l + r) / 2;
+            // mid (target) is too large => not reach m yet
+            if(valid(mid, nums, m)) r = mid - 1;
+            else l = mid + 1;
+        }
+        return (int)l;
+    }
+    bool valid(long target, vector<int>& nums, int m)
+    {
+        int count = 1;
+        long total = 0;
+        for(int i = 0; i < nums.size(); ++i)
+        {
+            total += nums[i];
+            if(total > target)
             {
-                ++cnt;
-                if(abs(dp[i] - dp[preidx] - avg) >= abs(dp[i - 1] - dp[preidx] - avg)) 
-                {maxsum = max(maxsum, dp[i - 1] - dp[preidx]); preidx = i - 1; }
-                else 
-                {maxsum = max(maxsum, dp[i] - dp[preidx]); preidx = i; }
+                total = nums[i];
+                ++count;
+                if(count > m) return false;
             }
         }
-        cout << "cnt = " << cnt << ", preidx = " << preidx <<endl;
-        if(cnt < m) maxsum = max(maxsum, dp[len] - dp[preidx]);
-        return maxsum;
+        return true;
     }
 };
 
