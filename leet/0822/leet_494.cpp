@@ -29,7 +29,7 @@ int main()
     cout << solu.findTargetSumWays(input, 3) << endl;
     return 0;
 }
-// a better solution
+// a better solution: dp => need to read more deeply later
 /*
 class Solution {
 public:

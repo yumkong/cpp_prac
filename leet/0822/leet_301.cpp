@@ -3,7 +3,8 @@
 // return all possible results
 #include <vector>
 #include <string>
-#include <stack>
+#include <set>
+#include <queue>
 #include <iostream>
 using namespace std;
 
@@ -11,49 +12,52 @@ class Solution {
 public:
     vector<string> removeInvalidParentheses(string s) {
         int len = s.size();
-        vector<pair<char, int> > err; // <error char, pos>
-        stack<pair<char, int> > st; // same as above vector
-        for(int i = 0; i < len; ++i)
-        {
-            if(s[i] == '(') st.push({s[i], i});
-            else if(s[i] == ')')
-            {
-                if(st.empty()) err.push_back({s[i], i});
-                else st.pop();
-            }
-        }
-        // erase all '(' at the end
-        while(!st.empty()) 
-        {
-            s.erase(st.top().second, 1); 
-            st.pop();
-        }
+        // method1: BFS
         vector<string> res;
-        int prevpos = -2;
-        for(int i = 0; i < err.size(); ++i)
+        if(len <= 0) {res.push_back(""); return res; }
+        set<string> visited;
+        queue<string> qs;
+        // 
+        visited.insert(s);
+        qs.push(s);
+        // 
+        bool found = false;
+        while(!qs.empty())
         {
-            if(err[i].second == prevpos + 1) 
+            s = qs.front();  qs.pop();
+            //cout << "s = " << s << endl;
+            if(isValid(s)) {res.push_back(s);  found = true; }
+            if(found) continue; // to process next one
+            // generate all possible states
+            for(int i = 0; i < s.size(); ++i)
             {
-                prevpos = err[i].second;
-                continue;
-            }
-            int k = 0;
-            while(k <= err[i].second)
-            {
-                if(s[k] == ')') 
+                // only try to remove left or right paren
+                if(s[i] != '(' && s[i] != ')') continue;
+                //[0, i-1] + [i+1, end]
+                string t = s.substr(0, i) + s.substr(i+1);
+                if(visited.count(t) <= 0) // not yet visited
                 {
-                    string stmp = s;
-                    stmp.erase(k, 1);
-                    res.push_back(stmp);
-                    // get rid of consecutive ')'s
-                    while(k+1<= err[i].second && s[k+1] == ')') ++k;
+                    qs.push(t);
+                    visited.insert(t);
                 }
-                ++k;
             }
-            prevpos = err[i].second;
         }
-        if(res.empty()) res.push_back(s);
         return res;
+    }
+    bool isValid(string s)
+    {
+        int count = 0;
+        for(int i = 0; i < s.size(); ++i)
+        {
+            char c = s[i];
+            if(c == '(') ++count;
+            if(c == ')')
+            {
+                if(count <= 0) return false;
+                else --count;
+            }
+        }
+        return count == 0;
     }
 };
 

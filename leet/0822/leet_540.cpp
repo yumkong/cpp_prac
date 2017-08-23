@@ -14,6 +14,7 @@ public:
         {
             mid = (left + right) / 2;
             halflen = (right - left) / 2;
+            // processing differs when half len is even or odd
             if(halflen % 2 == 1)
             {
                 if(nums[mid] == nums[mid-1]) left = mid + 1;

@@ -11,6 +11,8 @@ using namespace std;
 struct Comp {
     bool operator()(string s1, string s2)
     {
+        // sort in descending order of string length
+        // if string length the same, sort in ascending order of alphabet
         if(s1.size() != s2.size()) return s1.size() > s2.size();
         else return s1 < s2;
     }
@@ -20,6 +22,7 @@ class Solution {
 public:
     string findLongestWord(string s, vector<string>& d) {
         int len = d.size(), slen = s.size();
+        // [most important step]
         // sort the dict in lexicographical order
         sort(d.begin(), d.end(), Comp());
         //vector<vector<int> > memo;

@@ -20,10 +20,13 @@ public:
         {
             long remappedNum = (long)nums[i] - INT_MIN;
             long bucket = remappedNum / ((long)t + 1);
+            // all elements that satisfies: abs(nums[i] - nums[j]) <= t, are in [bucket], [bucket-1] or [bucket+1]
             if( mp.count(bucket) > 0
                || (mp.count(bucket - 1) > 0 && remappedNum - mp[bucket - 1] <= t)
                || (mp.count(bucket + 1) > 0 && mp[bucket + 1] - remappedNum <= t) )
             {return true; }
+            // here is an assumption that the k elements are distinct
+            // if not, will not come here (return true in the above step)
             if(mp.size() >= k)
             {
                 long lastBucket = ((long)nums[i - k] - INT_MIN) / ((long)t + 1);
