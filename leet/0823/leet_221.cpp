@@ -13,6 +13,13 @@ public:
         int col = matrix[0].size();
         if(col <= 0) return 0;
         int maxedge = 0;
+        //dp[r][c] means: the max edge of the square given [r][c] as the bottom-right point
+        // for:
+        //                  0 0 0 0 0 0 
+        // 1 0 1 0 0        0 1 0 1 0 0
+        // 1 0 1 1 1   ==>  0 1 0 1 1 1
+        // 1 1 1 1 1        0 1 1 1 2 2
+        // 1 0 0 1 0        0 1 0 0 1 0
         vector<vector<int> > dp(row + 1, vector<int>(col + 1, 0));
         for(int i = 1; i <= row; ++i)
         {
@@ -20,6 +27,7 @@ public:
             {
                 if(matrix[i-1][j-1] == '1')
                 {
+                    // 0824: up, left and up_left must >= 1 so as to achieve a square
                     dp[i][j] = min(min(dp[i][j-1], dp[i-1][j]), dp[i-1][j-1]) + 1;
                     maxedge = max(maxedge, dp[i][j]);
                 }

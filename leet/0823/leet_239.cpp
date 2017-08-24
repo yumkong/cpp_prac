@@ -15,7 +15,7 @@ public:
         if(len <= 0 || k <= 0) return res;
         res.assign(len - k + 1, 0);
         int idx = 0;
-        // 
+        //0823: save the max val's index of a window
         deque<int> dq;
         for(int i = 0; i < len; ++i)
         {
