@@ -10,8 +10,18 @@ public:
         // static dynamic programming
         if(n <= 0) return 0;
         // the least number of perfect square numbers which sum to i
+		// idx  cntPS
+		//  0    0    (0 has no perfect square numbers)
+		//  1    1   
+		//  2    1+[1] = 2
+		//  3    1+[2] = 3
+		//  4    1
+		//  5    1+[4]=2
+		// ...
         static vector<int> cntPS({0});
         // while not reaching n, incrementally calculate the next result
+		// time: O(nlogm)
+		//
         while(cntPS.size() <= n)
         {
             int m = cntPS.size();

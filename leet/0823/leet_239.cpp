@@ -25,6 +25,7 @@ public:
             while(!dq.empty() && nums[dq.back()] < nums[i]) dq.pop_back();
             // q contain idx, res contain content
             dq.push_back(i);
+			// return values from k to len
             if(i >= k - 1) res[idx++] = nums[dq.front()];
         }
         return res;
